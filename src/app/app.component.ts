@@ -3,6 +3,23 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AngularFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
+import {environment} from '../environments/environment'
+
+
+const config = {
+  apiKey: "AIzaSyA0qXTFAWHRUKkP8kYjFSJcUW-KC0kLkis",
+  authDomain: "buysell-f70a7.firebaseapp.com",
+  databaseURL: "https://buysell-f70a7.firebaseio.com",
+  projectId: "buysell-f70a7",
+  storageBucket: "buysell-f70a7.appspot.com",
+  messagingSenderId: "163363424062",
+  appId: "1:163363424062:web:035651d5751428518d8e6f",
+  measurementId: "G-FWCG1B9W4M"
+};
+
 
 @Component({
   selector: 'app-root',
@@ -13,30 +30,33 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'HOME',
+      title: 'todays deal',
       url: './home',
       icon: 'home'
     },
     {
-      title: 'SALE THINGS',
+      title: 'sale item  ',
       url: './salegrosary',
-      icon: 'home'
+      icon: 'create'
     },
    
   ]
-  constructor(
+  constructor( 
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    
+    
   ) {
     this.initializeApp();
   }
 
-  initializeApp() {
+  initializeApp() { 
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    firebase.initializeApp(config);
   }
 
   ngOnInit() {

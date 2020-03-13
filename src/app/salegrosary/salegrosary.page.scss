@@ -1,0 +1,45 @@
+
+ion-card-subtitle{
+     text-align: center;
+     color:red;
+     font-size: large;
+     font-family: cursive;
+}
+ion-content{
+     --background-color: gray;
+}
+ion-card{
+     background-color: gray;
+}
+ion-item{
+     --background-color: gray;  
+}
+ion-row {
+     background-color: #fff;
+}
+ion-col {
+     text-align: center;
+     background-color: #d4e2c5;
+}
+.heading {
+     background-color: aqua;
+}
+.btn {
+     display: flex;
+    align: center;
+}
+ion-button{
+     display: grid;
+     justify-content: center;
+     background-color: brown;
+}
+.redbutton{
+color: red;
+font-weight: 700;
+}
+ion-header{
+     background-color: red;
+}
+ion-item.selected{
+     background-color: green;
+}

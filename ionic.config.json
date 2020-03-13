@@ -1,5 +1,7 @@
 {
   "name": "buysel",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

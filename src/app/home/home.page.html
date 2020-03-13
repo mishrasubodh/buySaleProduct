@@ -1,12 +1,97 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>home</ion-title>
+    <ion-title>todays deal</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<ion-card *ngIf="user">
+  <ion-grid class="contnr" *ngFor="let value of user">
+    <ion-row class="grid-head">
+      <ion-col width-60>
+       Name
+      </ion-col>
+      <ion-col>
+       {{value.yourname}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-40>
+        City
+      </ion-col>
+      <ion-col>
+        {{value.yourcity}}
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col width-40 >
+        District
+       </ion-col>
+       <ion-col>
+        {{value.yourdistrict}}
+      </ion-col>
+    </ion-row>
+     <ion-row>
+      <ion-col width-40 >
+        Mo-number
+     </ion-col>
+     <ion-col>
+      {{value.yournumber}}
+    </ion-col>
+     </ion-row>
+     <ion-row>
+     
+     <ion-col  width-40 class="redbutton">
+      Grain
+    </ion-col >
+    <ion-col class="greenbtn">
+      {{value.grain}}
+    </ion-col>
+    </ion-row>
+    
+      <ion-row>
+      <ion-col  width-40 class="redbutton">
+        RatePerKg
+      </ion-col >
+      <ion-col class="greenbtn">
+        {{value.rate}}
+      </ion-col>
+    </ion-row>
+    <ion-row  style="background:#eff0f1" class="cont-rows">
 
-</ion-content>
+      <ion-col width-40>
+        {{value.TransacType}}
+      </ion-col>
+      <ion-col width-40>
+        {{value.Transactions}}
+      </ion-col>
+      <ion-col width-40>
+        {{value.Count}}
+      </ion-col>
+      <ion-col width-40>
+        {{value.OverallSales}}
+      </ion-col>
+      <ion-col width-40>
+        {{value.Discount}}
+      </ion-col>
+      <ion-col width-40>
+        {{value.OverallTax}}
+      </ion-col>
+      <ion-col width-40>
+        {{value.MandatoryTax}}
+      </ion-col>
+      <ion-col width-40>
+        {{value.ServiceCharge}}
+      </ion-col>
+      <ion-col width-40>
+        {{value.NetAmt}}
+      </ion-col>
+    </ion-row> 
+  </ion-grid>
+
+</ion-card>
+</ion-content> 
