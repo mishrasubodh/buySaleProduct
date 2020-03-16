@@ -7,9 +7,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-card *ngIf="user">
-  <ion-grid class="contnr" *ngFor="let value of user">
+<ion-content  *ngIf="user" >
+<ion-card *ngFor="let value of user">
+  <ion-grid class="contnr" >
     <ion-row class="grid-head">
       <ion-col width-60>
        Name
@@ -60,35 +60,13 @@
       <ion-col class="greenbtn">
         {{value.rate}}
       </ion-col>
-    </ion-row>
-    <ion-row  style="background:#eff0f1" class="cont-rows">
-
-      <ion-col width-40>
-        {{value.TransacType}}
-      </ion-col>
-      <ion-col width-40>
-        {{value.Transactions}}
-      </ion-col>
-      <ion-col width-40>
-        {{value.Count}}
-      </ion-col>
-      <ion-col width-40>
-        {{value.OverallSales}}
-      </ion-col>
-      <ion-col width-40>
-        {{value.Discount}}
-      </ion-col>
-      <ion-col width-40>
-        {{value.OverallTax}}
-      </ion-col>
-      <ion-col width-40>
-        {{value.MandatoryTax}}
-      </ion-col>
-      <ion-col width-40>
-        {{value.ServiceCharge}}
-      </ion-col>
-      <ion-col width-40>
-        {{value.NetAmt}}
+    </ion-row> 
+    <ion-row>
+      <ion-col  width-40>
+      date
+      </ion-col >
+      <ion-col class="greenbtn">
+        {{value.time | date: 'yyyy-MM-dd hh:mm:ss'}}
       </ion-col>
     </ion-row> 
   </ion-grid>

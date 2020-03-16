@@ -18,6 +18,7 @@ userdata:any
     this.user = [];
     this.user =this.snapshotToArray(resp);
   })
+  
    }
 
   ngOnInit() {

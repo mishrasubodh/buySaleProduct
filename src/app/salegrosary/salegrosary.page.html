@@ -26,7 +26,7 @@
     <ion-label position="floating">enter your Number</ion-label>
     <ion-input (input)="checkmobil()"  type="number" [(ngModel)] ="yournumber"></ion-input>
   </ion-item>
-  <ion-button class="savebtn" *ngIf="showdata"  color="success" [disabled]="!yourname||!yourdistrict||!yourcity||!yournumber" (click)="getUserData(yourname,yourdistrict,yourcity,yournumber)">click To continue</ion-button>
+  <ion-button class="savebtn" *ngIf="showdata"  color="success" [disabled]="!yourname||!yourdistrict||!yourcity||!yournumber||!validnumber" (click)="getUserData(yourname,yourdistrict,yourcity,yournumber)">click To continue</ion-button>
   <div *ngIf="!showdata">
   
     <ion-row style="border-bottom: groove;">
@@ -54,7 +54,8 @@
       <ion-label > {{yourcity}}</ion-label>
     </ion-col>
     <ion-col col-3>
-      <ion-label >  {{yournumber}}</ion-label>
+      <ion-label >{{yournumber}}</ion-label>
+
     </ion-col>
   </ion-row>
 

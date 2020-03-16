@@ -24,6 +24,7 @@ export class SalegrosaryPage implements OnInit {
   grain = ["sugarcane", "barley", "Wheat", "Paddy"];
   public selectedStateId = "";
   showdata = true;
+  validnumber=false
 
   constructor(public service: GetDataService,
     private router: Router
@@ -54,12 +55,15 @@ export class SalegrosaryPage implements OnInit {
     this.data["yournumber"] = yournumber;
   }
 checkmobil(){
-console.log(this.yournumber,"checkmobil")
-if(this.yournumber.toString().length > 10 ||this.yournumber.toString().length < 13 ){
+
+if(this.yournumber){
+if(this.yournumber.toString().length > 8 &&this.yournumber.toString().length < 13 ){
+ this.validnumber=true
 
 }
 else{
-  
+  this.validnumber=false
+}
 }
 }
   showSelectValue(event) {
@@ -67,10 +71,12 @@ else{
     this.data["grain"] = this.selectedStateId;
   }
 
-  gohomepage() {
+  gohomepage() { 
     this.data["grain"] = this.selectedStateId;
     this.data["rate"] = this.rate;
-	this.data["time"] = new Date();
+    this.data["time"] = new Date().toUTCString();
+   
+    
     let newInfo = firebase.database().ref('user/').push();
     newInfo.set(this.data);
 
