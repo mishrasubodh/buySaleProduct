@@ -70,6 +70,7 @@ else{
   gohomepage() {
     this.data["grain"] = this.selectedStateId;
     this.data["rate"] = this.rate;
+	this.data["time"] = new Date();
     let newInfo = firebase.database().ref('user/').push();
     newInfo.set(this.data);
 
