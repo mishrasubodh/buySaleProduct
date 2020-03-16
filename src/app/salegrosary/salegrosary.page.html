@@ -28,7 +28,6 @@
   </ion-item>
   <ion-button class="savebtn" *ngIf="showdata"  color="success" [disabled]="!yourname||!yourdistrict||!yourcity||!yournumber||!validnumber" (click)="getUserData(yourname,yourdistrict,yourcity,yournumber)">click To continue</ion-button>
   <div *ngIf="!showdata">
-  
     <ion-row style="border-bottom: groove;">
       <ion-col col-3 class="heading">
       <ion-label >Name</ion-label>
@@ -68,7 +67,7 @@
 
     <ion-item color="Primary" >
       <ion-label position="floating">please enter rate per/kg</ion-label>
-      <ion-input type="number"   [(ngModel)] ="rate"></ion-input>
+      <ion-input type="number"[(ngModel)] ="rate"></ion-input>
     </ion-item>
 
    

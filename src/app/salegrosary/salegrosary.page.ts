@@ -31,13 +31,14 @@ export class SalegrosaryPage implements OnInit {
   ) { }
   ionViewWillLeave() {
     this.allData1 = [];
-    this.yourname = ""
-    this.yourdistrict = ""
-    this.yourcity = ""
-    this.yournumber = 0
-    this.saveData = ""
+    this.yourname = "";
+    this.yourdistrict = "";
+    this.yourcity = "";
+    this.yournumber = 0;
+    this.saveData = "";
     this.data = {};
-    this.rate = 0
+    this.rate = 0;
+    this.showdata=true;
   }
   ngOnInit() { }
 
